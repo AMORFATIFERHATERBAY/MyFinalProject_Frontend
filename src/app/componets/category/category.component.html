@@ -1,7 +1,28 @@
-<ul class="list-group">
+
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<!--<ul class="list-group">
+   <li *ngFor="let category of categories">{{category.categoryName}}</li>
     <li class="list-group-item">An item</li>
     <li class="list-group-item">A second item</li>
     <li class="list-group-item">A third item</li>
     <li class="list-group-item">A fourth item</li>
     <li class="list-group-item">And a fifth one</li>
-  </ul>
+  </ul> -->
+
+  <label  class="table">
+
+    <thead>
+      <tr>
+        <th>Category Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        
+        <td>{{category.categoryName}}</td>
+
+      </tr>
+    </tbody>
+  </label>

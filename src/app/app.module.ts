@@ -8,13 +8,17 @@ import { ProductComponent } from './componets/product/product.component';
 import { CategoryComponent } from './componets/category/category.component';
 import { NaviComponent } from './componets/navi/navi.component';
 import { from } from 'rxjs';
+import { CustomerComponent } from './componets/customer/customer.component';
+import { OrderComponent } from './componets/order/order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     CategoryComponent,
-    NaviComponent
+    NaviComponent,
+    CustomerComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
