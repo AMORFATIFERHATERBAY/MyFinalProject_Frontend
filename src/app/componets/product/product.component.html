@@ -1,24 +1,59 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+<br>
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
   <span class="visually-hidden">Loading...</span>
 </div>
-
-  <table *ngIf="dataLoaded==true" class="table">
+<h5 class="text-center">Products</h5>
+<div style="overflow: auto; width: 100%; height: 350px">
+  <table
+    *ngIf="dataLoaded == true"
+    class="table table-hover"
+    style="width: 100%"
+  >
     <thead>
-        <tr>
-            <th>Id</th>
-            <th>Product Name</th>
-            <th>Category Id</th>
-            <th>Unit of Price</th>
-            <th>Units In Stock</th>
-        </tr>
+      <tr>
+        <th class="text-center">Id</th>
+        <th>Product Name</th>
+        <th>Category Id</th>
+        <th>Unit of Price</th>
+        <th class="text-right">Units In Stock</th>
+        <th class="text-right">Actions</th>
+      </tr>
     </thead>
     <tbody>
-     <tr *ngFor="let product of products">
-        <td>{{product.productID}}</td>
-        <td>{{product.productName}}</td>
-        <td>{{product.categoryID}}</td>
-        <td>{{product.unitPrice}}</td>
-        <td>{{product.unitsInStock}}</td>
-     </tr>
-   </tbody>
+      <tr *ngFor="let product of products">
+        <td class="text-center">{{ product.productID }}</td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.categoryID }}</td>
+        <td class="text-right">&euro; {{ product.unitPrice }}</td>
+        <td>{{ product.unitsInStock }}</td>
+        <td class="td-actions text-right">
+          <button
+            type="button"
+            rel="tooltip"
+            class="btn btn-info btn-sm btn-icon"
+          >
+            <i class="tim-icons icon-single-02"></i>
+          </button>
+          <button
+            type="button"
+            rel="tooltip"
+            class="btn btn-success btn-sm btn-icon"
+          >
+            <i class="tim-icons icon-settings"></i>
+          </button>
+          <button
+            type="button"
+            rel="tooltip"
+            class="btn btn-danger btn-sm btn-icon"
+          >
+            <i class="tim-icons icon-simple-remove"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
   </table>
+</div>
