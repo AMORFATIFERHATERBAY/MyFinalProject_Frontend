@@ -9,12 +9,14 @@
 <ul class="list-group">
   <h5 *ngIf="dataLoaded == true" class="text-center">Category Name</h5>
   <li
-    routerLink = "/products/category/{{category.categoryID}}"
+    routerLink="/products/category/{{ category.categoryID }}"
     (click)="setCurrentCategory(category)"
     *ngFor="let category of categories"
     [class]="getCurrentCategoryClass(category)"
   >
     {{ category.categoryName }}
   </li>
+  <br />
+  <li [class]="getAllCategoryClass()" routerLink="/products" (click)="setAllCategory()">All Products</li>
 </ul>
 <h5 *ngIf="currentCategory">{{ currentCategory.categoryName }} selected</h5>
