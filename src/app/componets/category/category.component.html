@@ -1,5 +1,4 @@
-<br>
-<br>
+<br><br>
 <div
   *ngIf="dataLoaded == false"
   class="spinner-border text-primary"
@@ -8,8 +7,9 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 <ul class="list-group">
-  <h5 class="text-center">Category Name</h5>
-  <li *ngFor="let category of categories" class="list-group-item">
+  <h5 *ngIf="dataLoaded == true" class="text-center">Category Name</h5>
+  <li (click)="setCurrentCategory(category)" *ngFor="let category of categories" [class]="getCurrentCategoryClass(category)">
     {{ category.categoryName }}
   </li>
 </ul>
+<h5 *ngIf="currentCategory">{{currentCategory.categoryName}} selected</h5>
