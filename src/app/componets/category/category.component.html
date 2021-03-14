@@ -17,6 +17,6 @@
     {{ category.categoryName }}
   </li>
   <br />
-  <li [class]="getAllCategoryClass()" routerLink="/products" (click)="setAllCategory()">All Products</li>
+  <li [class]="getAllCategoryClass()" routerLink="/products" >All Products</li>
 </ul>
 <h5 *ngIf="currentCategory">{{ currentCategory.categoryName }} selected</h5>

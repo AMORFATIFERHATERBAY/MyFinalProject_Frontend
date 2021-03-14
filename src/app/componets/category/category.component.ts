@@ -49,8 +49,6 @@ export class CategoryComponent implements OnInit {
     }
   }
 
-  setAllCategory(){
-   return "list-group-item active"
-  }
+  
 
 }
