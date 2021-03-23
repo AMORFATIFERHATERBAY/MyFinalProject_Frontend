@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,12 @@ import { NaviComponent } from './componets/navi/navi.component';
 import { from } from 'rxjs';
 import { CustomerComponent } from './componets/customer/customer.component';
 import { OrderComponent } from './componets/order/order.component';
+import { VatAddedPipe } from './pipes/vat-added.pipe';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+
+import { ToastrModule} from 'ngx-toastr';
+import { CartSummaryComponent } from './componets/cart-summary/cart-summary.component';
+import { ProductAddComponent } from './componets/product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +26,22 @@ import { OrderComponent } from './componets/order/order.component';
     CategoryComponent,
     NaviComponent,
     CustomerComponent,
-    OrderComponent
+    OrderComponent,
+    VatAddedPipe,
+    FilterPipePipe,
+    CartSummaryComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ import { CategoryService } from 'src/app/services/category.service';
 export class CategoryComponent implements OnInit {
 
   categories:Category[]=[];
-  currentCategory!: Category;
+  currentCategory: Category = {categoryID:1,categoryName:""};
   dataLoaded=false;
   constructor(private categoryService:CategoryService) { }
 
@@ -29,6 +29,11 @@ export class CategoryComponent implements OnInit {
     //console.log(category.categoryName);
     this.currentCategory=category;
   }
+//***** */
+  removeCurrentCategory(){
+    // this.filterText = "";
+    this.currentCategory = {categoryID:-1,categoryName:""};
+  }
 
   getCurrentCategoryClass(category:Category){
     if (category == this.currentCategory) {
@@ -39,15 +44,19 @@ export class CategoryComponent implements OnInit {
     }
   }
 
+
  
   getAllCategoryClass(){
-    if(!this.currentCategory){
-      return "list-group-item active"
+    let defaultCategory:Category={categoryID:-1,categoryName:""};
+    if(this.currentCategory.categoryID==defaultCategory.categoryID){
+      return "list-group-item active cursorPointer"
     } 
     else{
-      return "list-group-item"
+      return "list-group-item cursorPointer"
     }
   }
+
+  
 
   
 

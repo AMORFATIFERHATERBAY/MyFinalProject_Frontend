@@ -17,6 +17,13 @@
     {{ category.categoryName }}
   </li>
   <br />
-  <li [class]="getAllCategoryClass()" routerLink="/products" >All Products</li>
+  <li
+    [class]="getAllCategoryClass()"
+    (click)="removeCurrentCategory()"
+    routerLink="/products"
+    aria-current="true"
+  >
+    All Products
+  </li>
 </ul>
 <h5 *ngIf="currentCategory">{{ currentCategory.categoryName }} selected</h5>
